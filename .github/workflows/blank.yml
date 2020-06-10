@@ -11,7 +11,7 @@ jobs:
         - uses: spyoungtech/mirror-action@master
           with:
             REMOTE: 'https://gitee.com/nfsqhia/github-nlp-progress.git'
-            GIT_USERNAME: spyoungtech
+            GIT_USERNAME: nfsqhia
             GIT_SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
   build-and-deploy:
     runs-on: ubuntu-latest
