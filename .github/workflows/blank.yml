@@ -7,12 +7,14 @@ jobs:
   git-mirror:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v1
-        - uses: spyoungtech/mirror-action@master
-          with:
-            REMOTE: 'https://gitee.com/nfsqhia/github-nlp-progress.git'
-            GIT_USERNAME: nfsqhia
-            GIT_SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Single repo mirror
+        uses: xuMINGzhi9/github-nlp-progress@master
+        with:
+          src: github/xuMINGzhi9
+          dst: gitee/nfsqhia
+          dst_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          white_list: "github-nlp-progress"
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
