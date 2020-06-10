@@ -4,6 +4,15 @@ on:
     branches:
       - master
 jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:xuMINGzhi9/github-nlp-progress.git'
+          destination-repo: 'git@gitee.com:nfsqhia/github-nlp-progress.git'
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
