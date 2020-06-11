@@ -26,6 +26,7 @@ jobs:
       - name: Build Gitee Pages
         uses: yanglbme/gitee-pages-action@master
         with:
-            gitee-username: nfsqhia
-            gitee-password: ${{ secrets.GITEE_PASSWORD }}
-            gitee-repo: nfsqhia/github-nlp-progress
+          branch: gh-pages
+          gitee-username: nfsqhia
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: nfsqhia/github-nlp-progress
