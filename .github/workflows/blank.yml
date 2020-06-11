@@ -4,15 +4,15 @@ on:
     branches:
       - master
 jobs:
-#   git-mirror:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: wearerequired/git-mirror-action@master
-#         env:
-#           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-#         with:
-#           source-repo: 'git@github.com:xuMINGzhi9/github-nlp-progress.git'
-#           destination-repo: 'git@gitee.com:nfsqhia/github-nlp-progress.git'
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:xuMINGzhi9/github-nlp-progress.git'
+          destination-repo: 'git@gitee.com:nfsqhia/github-nlp-progress.git'
 #   git-mirror:
 #     runs-on: ubuntu-latest
 #     steps:
@@ -22,15 +22,15 @@ jobs:
 #             REMOTE: 'https://gitee.com/nfsqhia/github-nlp-progress.git'
 #             GIT_USERNAME: nfsqhia
 #             GIT_SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }} 
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v2
-      env:
-        ACCESS_TOKEN: ${{ secrets.deploy }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install --registry=https://registry.npm.taobao.org && npm run build
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v1
+#     - name: Build and Deploy
+#       uses: JamesIves/github-pages-deploy-action@releases/v2
+#       env:
+#         ACCESS_TOKEN: ${{ secrets.deploy }}
+#         BRANCH: gh-pages
+#         FOLDER: build
+#         BUILD_SCRIPT: npm install --registry=https://registry.npm.taobao.org && npm run build
